@@ -4,6 +4,11 @@
         <meta name="theme-color" content="#99042E" charset="utf-8">
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style-login.css" />
+        <style>
+            .default-text {
+                color: rgba(0, 0, 0, 0.5); /* Cambia el color a gris claro */
+            }
+        </style>
     </head>
     <body>
         <div id="hideBox">
@@ -16,7 +21,7 @@
                         <input type="text"
                                name="usrname"
                                id="usrname"
-                               class="textbox"
+                               class="textbox default-text"
                                value="Username"
                                style="width: 300px;"
                                autocomplete="off"
@@ -25,7 +30,7 @@
                         <input type="password"
                                name="password"
                                id="password"
-                               class="textbox"
+                               class="textbox default-text"
                                value="Password"
                                style="width: 300px;"
                                autocomplete="off"
@@ -42,13 +47,27 @@
             </div>
             <br>
             <div id="lowBox" class="textDiv">
-                <p id="oneP" style="font-weight: bold;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p id="twoP" >Suspendisse sit amet consequat metus.</p>
-                <p id="threeP" >Donec in dictum libero, nec vulputate felis.</p>
+                <p id="oneP" style="font-weight: bold;">Bienvenido a SocialWeb, la red social que te conecta con lo que más te importa.</p>
+                <p id="twoP" >Únete a nosotros y descubre nuevas formas de compartir y conectar con tus amigos.</p>
+                <p id="threeP" >¿Necesitas ayuda? Contáctanos en ayuda@socialweb.com.</p>
             </div>
         </div>
         <p id="info">©2018 Marco C. All rights reserved.<a target="_blank" href="info.html">info</a></p>
         <script type="text/javascript" src="assets/js/java.js"></script>
         <script type="text/javascript" src="assets/js/md5.js"></script>
+        <script>
+            function removeDefault(input) {
+                if (input.value == input.defaultValue) {
+                    input.value = "";
+                    input.classList.remove("default-text");
+                }
+            }
+            function setDefault(input) {
+                if (input.value == "") {
+                    input.value = input.defaultValue;
+                    input.classList.add("default-text");
+                }
+            }
+        </script>
     </body>
 </html>
